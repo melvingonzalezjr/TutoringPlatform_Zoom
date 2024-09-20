@@ -10,8 +10,8 @@ export const viewport: Viewport = {
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Zoom Tutoring Meets",
-  description: "",
+  title: "Zoom Tutoring Meetups",
+  description: "Zoom Session Space for Tutors/Tutees",
   icons: {
     icon: "https://yt3.googleusercontent.com/ytc/AIdro_nEMrtUlE0NRxwOS8-a04eDhnovhal7ZfS8ywgwZ-6f2GQ=s900-c-k-c0x00ffffff-no-rj",
   },
