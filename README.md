@@ -1,40 +1,66 @@
-# Zoom VideoSDK Next.js Quickstart
+# Zoom Integration for Online Tutoring Platform
 
-This repo contains a quickstart for using the Zoom VideoSDK with Next.js. There's a quickstart for both the Next.js App Router and the Pages Router. You can use either the [`app-router`](https://github.com/zoom/videosdk-nextjs-quickstart/tree/app-router) or the [`pages-router`](https://github.com/zoom/videosdk-nextjs-quickstart/tree/pages-router) branch of this repository.
+This section of the project integrates Zoom video conferencing into our online tutoring platform, allowing tutors and students to engage in live video sessions, screen sharing, and chat directly within the platform.
 
-You can learn more about the differences [here](https://nextjs.org/docs#app-router-vs-pages-router).
+## Features
 
-## Prerequisites
+- Real-time video, audio, and screen sharing using **Zoom Video SDK**.
+- Secure video sessions authenticated with **JWT** (JSON Web Tokens).
+- Dynamic session creation based on user input, allowing tutors and students to join the same room.
 
-- Node LTS
-- Bun (or NPM)
-- Zoom Video SDK Account
+## Tools and Technologies
 
-## Getting Started
+- **React**: Front-end framework for building the user interface
+- **Next.js**: Framework for server-side rendering and routing
+- **Zoom Video SDK**: Provides video conferencing, screen sharing, and chat features
+- **JWT**: Used for secure authentication of Zoom sessions
+- **Node.js**: Server-side environment for handling backend logic
+- **jsrsasign**: Library for generating JWTs
 
-1. Clone the repository
+## Setup Instructions
 
-```bash
-$ git clone https://github.com/zoom/videosdk-nextjs-quickstart.git
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/tutoring-platform.git
+   ```
 
-2. Install dependencies
+2. **Install dependencies**:
+   ```bash
+   npm install @zoom/videosdk jsrsasign
+   ```
 
-```bash
-$ bun install # or npm install
-```
+3. **Configure Environment Variables**:
+   - Create a `.env` file in the root directory:
 
-3. Copy `.env.example` to `.env` and fill in your Zoom Video SDK credentials as:
+     ```bash
+     ZOOM_SDK_KEY="Your Zoom SDK Key"
+     ZOOM_SDK_SECRET="Your Zoom SDK Secret"
+     ```
+    *Note: Creating a Zoom SDK Key and Secret is a bit tricky. Follow the steps at [Zoom Video SDK: Get Credentials](https://developers.zoom.us/docs/video-sdk/get-credentials/#get-video-sdk-credentials).
+    You MUST use a different email address from your regular Zoom account email account.*
+    
+    *Easy workaround: if your email is name@company.com, your Zoom Video Developer email could follow the syntax name+text@company.com. Zoom sees it as two different email addresses, but emails to both email addresses are routed to name@company.com.*  
 
-```bash
-ZOOM_SDK_KEY="your-key"
-ZOOM_SDK_SECRET="your-secret"
-```
+    *Example: email is alice@gmail.com, Zoom developer email is alice+zoom@gmail.com. The initial email address alice@gmail.com receives all emails sent to both.*
 
-4. Start the development server
 
-```bash
-$ bun dev # or npm run dev
-```
+4. **Run the app**:
+   ```bash
+   npm run dev
+   ```
 
-You can open [http://localhost:3000](http://localhost:3000) with your browser to view the project.
+5. **Access the app**:  
+   The app will be available at `http://localhost:3000/`. Users can join video sessions via dynamic routes with the path being the name of the tutoring session.
+
+## Key Code Components
+
+- **JWT Generation**: The server generates JWTs using the Zoom SDK key and secret for secure session authentication.
+- **Dynamic Routing**: Each session is dynamically created based on user input and routed to `/call/<session_name>`.
+- **Video Component**: The `Videocall` component handles rendering of video and audio, using the Zoom Video SDK.
+
+## Future Enhancements
+
+- Add chat functionality for real-time communication during tutoring sessions.
+- Implement screen sharing for more interactive learning experiences.
+- Enhance security with user-specific authentication for session access.
+
