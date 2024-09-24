@@ -1,6 +1,6 @@
 # Zoom Integration for Online Tutoring Platform
 
-This section of the project integrates Zoom video conferencing into our online tutoring platform, allowing tutors and students to engage in live video sessions, screen sharing, and chat directly within the platform.
+This section of the project integrates Zoom video conferencing into our online tutoring platform, allowing tutors and students to engage in live video sessions, screen sharing, and chat directly within the platform. The Zoom SDK codealong at [Next.js Video Conferencing App with Zoom Video SDK](https://developers.zoom.us/blog/nextjs-video-conferencing-app-using-the-zoom-video-sdk/), as well as the associated repo [Video SDK-NextJS Quickstart](https://github.com/zoom/VideoSDK-Nextjs-Quickstart/), were used as the base for this project.
 
 ## Features
 
@@ -21,7 +21,7 @@ This section of the project integrates Zoom video conferencing into our online t
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/tutoring-platform.git
+   git clone git@github.com:melvingonzalezjr/tutoringplatform-zoom.git
    ```
 
 2. **Install dependencies**:
